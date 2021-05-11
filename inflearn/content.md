@@ -11,3 +11,13 @@ CSS는 camel case로 사용한다.
   - 하나의 변환하는 기능
 - 프리셋
   - 여러개의 플러그인을 모아놓은 것
+
+babel의 `--watch` 옵션은, 파일이 변경될 때 마다 변경해준다.
+npx: node_modules/.bin 폴더에 있는 바이너리를 실행할 수 있다.
+  - 만약 babel이 없었다면, `npx babel`시 babel을 설치하며 실행한다.
+
+```
+npm init -y
+npm install @babel/core @babel/cli @babel/preset-react
+npx babel --watch src --out-dir . --presets @babel/preset-react
+```
