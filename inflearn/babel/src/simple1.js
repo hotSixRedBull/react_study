@@ -11,7 +11,7 @@ function Container() {
             <LikeButton />
             <div>
                 <span>현재 카운트: </span>
-                <span style={{marginRight: 10}}>{count}</span>
+                <span style={{marginRight: 10, color:'red'}}>{count}</span>
                 <button onClick={() => setCount(count+1)}>증가</button>
                 <button onClick={() => setCount(count-1)}>감소</button>
             </div>
