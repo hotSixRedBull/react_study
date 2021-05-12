@@ -21,3 +21,21 @@ npm init -y
 npm install @babel/core @babel/cli @babel/preset-react
 npx babel --watch src --out-dir . --presets @babel/preset-react
 ```
+
+### 웹팩
+- 자바스크립트 압축
+- js에서 Text, CSS 등 파일 가져와서 다루기
+- 사용되지 않는 코드 제거
+- 환경변수 주입
+- 파일 이름에 해시값 추가 => 브라우저 캐싱의 효율적 이용
+- 번들링을 통해 cdn의 라이브러리 이상으로 인한 오동작 등을 예방할 수 있다.
+
+?ESM?
+?commonJS?
+`npx serve`: 정적 웹 서비스
+
+```
+npm install webpack webpack-cli react react-dom
+```
+
+`npx webpack`: 기본 동작으로 dist 폴더에 main.js를 생성한다.
