@@ -78,8 +78,25 @@ import(...).then(...) 으로, 데이터 파일을 필요할 때(이벤트)에 �
 - build
   - `npm run build` 정적 파일이 생성된다.
   - `npx serve -s build`를 통해 서비스 가능.
+  - 이미지가 작으면 js에 내장하게 된다.
 - test
   - `npm test`
+  - `*.test.js` 형태의 파일들은 모두 TC로써 테스트된다.
+  - `__test__` 폴더를 만들면, 해당 폴더 내의 모든 파일은 테스트가 된다.
 - eject
   - `npm run eject`
+  - react-scripts를 사용하지 않고, 모든 설정 파일을 추출하는 명령어.
+  - 직접 개발환경을 구성하고 싶을 경우 사용한다.
 
+Polyfill
+- `core-js`에서 하위호환을 지원하며, 바벨도 core-js를 사용한다.
+- create-react-app도 core-js를 사용하기 때문에, import 후 사용하면 된다.
+  - `import 'core-js/features/string/pad-start'`
+
+환경변수
+- `process.env.{변수 이름}`형태로 접근 가능하다.
+- process.env.NODE_ENV: npm start시 development, npm test시 test, npm run build시 production이라는 값을 가진다.
+- REACT_APP_*로 시작하는 변수도 가져올 수 있다.
+  - `REACT_APP_API_URL=api.myapp.com npm start`로 실행을 하면, console.log(process.env.REACT_APP_API_URL)에 api.myapp.com이 출력된다.
+  - 윈도우에선 `set "REACT_APP_URL=api.myapp.com" && npm start`
+- 환경변수가 많아지면 `.env.{NODE_ENV}` 파일로 관리하는 게 좋다.
