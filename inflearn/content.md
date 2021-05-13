@@ -101,7 +101,7 @@ Polyfill
   - 윈도우에선 `set "REACT_APP_URL=api.myapp.com" && npm start`
 - 환경변수가 많아지면 `.env.{NODE_ENV}` 파일로 관리하는 게 좋다.
 
-CSS
+### CSS
 - CSS 파일
   - 이름 충돌이 발생된 경우, 아래쪽에 선언된 것이 적용된다.
 - css-module
@@ -137,3 +137,14 @@ CSS
       return <BoxCommon isBig={isBig}>{label}</BoxCommon>;
     }
     ```
+### SPA
+- MPA는 page reload를 통한 전환이었으나, SPA는 자바스크립트에서 브라우저로 페이지 전환 요청.
+  - 뒤로가기도 SPA의 경우에는 서버로 요청을 보내지 않기 위한 기능을 가지고 있어야 한다.
+  - 이러한 조건을 만족시키는 브라우저 API
+    - pushState
+    - replaceState
+    - popstate(이벤트)
+  - `react-router-dom`
+    - SPA의 단점인 초기 페이지 로딩 속도를 높이기 위한 모듈
+    - 페이지를 분할하여 필요할 때 로드한다.
+
