@@ -100,3 +100,40 @@ Polyfill
   - `REACT_APP_API_URL=api.myapp.com npm start`로 실행을 하면, console.log(process.env.REACT_APP_API_URL)에 api.myapp.com이 출력된다.
   - 윈도우에선 `set "REACT_APP_URL=api.myapp.com" && npm start`
 - 환경변수가 많아지면 `.env.{NODE_ENV}` 파일로 관리하는 게 좋다.
+
+CSS
+- CSS 파일
+  - 이름 충돌이 발생된 경우, 아래쪽에 선언된 것이 적용된다.
+- css-module
+  - 클래스 이름에 해시값이 붙어 이름 충돌이 해결된다.
+  - js파일에서 import ... from '{파일명}.module.css'로 import
+  - 적용은 {import한 이름}.{스타일 이름}
+    - E.g., Style.Button
+  - `npm install classnames`
+    - 사용법은 `import cn from 'classnames'`로 가져와서
+    - `cn(Style.Button, Style.big)` === 이전의 {\`${Style.Button} ${Style.big}\`}와 동일한 표현
+    - 클래스 명에 대한 조건부 분기 사용이 가능하다.
+      - className={cn(Style.Button, {\[Style.big\]: isBig, \[Style.small\]: !isBig})}
+      - ^ isBig이 true면 Style.big을, isBig이 false면 Style.small을 사용.
+- Sass
+  - `npm install node-sass`
+  - `.scss`의 확장자를 가진다.
+  - `$변수명: 값`의 형태로 정의 가능.
+  - @import otherfile.scss로 서로 참조도 가능하다.
+- css-in-js
+  - 자바스크립트에서 스타일을 정의하여, 재사용성을 높이는 경우.
+  - `npm install styled-components`: 다양한 css-in-js 컴포넌트 중 하나
+  - `import styled from 'styled-components';`
+    ```
+    const BoxCommon = styled.button`
+      width: ${props => (props.isBig ? 100: 50)}px;
+      height: 30px;
+      background-color: red;
+    `;
+
+    export default function Box({ size }) {
+      const isBig = size === 'big';
+      const label = isBig ? '큰 버튼' : '작은 버튼';
+      return <BoxCommon isBig={isBig}>{label}</BoxCommon>;
+    }
+    ```
