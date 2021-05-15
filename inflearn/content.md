@@ -155,5 +155,22 @@ Polyfill
   - `document.querySelector(.todo .desc).appendChild({다른 element})`: li type의 경우에 이렇게 child를 추가할 수 있는건가?
   - `document.createElement('li').innerHTML`: 생성하려는 요소의 innerHTML에 접근, 수정 가능. (document.createElement('li')를 변수에 할당했다면.)
 - react를 사용하여 To-Do list 생성
-  - ``
-
+  - `useState([])`
+    - 컴포넌트에 상태값을 추가할 수 있다.
+    - 매개 변수는 상태값의 초기값, 따라서 `[]`는 빈 상태가 기본.
+    - 반환하는 값은 상태 `배열`.
+      - 첫 번째 아이템은 상태값
+      - 두 번째 아이템은 상태값 변경 함수
+        - 상태값 변경 함수를 통해 상태값이 변경되면, React는 UI를 변경시킨다.
+  - jsx에서 list element에는 `key`를 입력해줘야 react에서 효율적으로 업데이트 할 수 있다.
+  - 비구조화 연산자(destructuring)
+    ```
+      let arr = ['mike', 12];
+      let [name, age] = arr;
+      name, age에 각각 'mike', 12가 들어간다.
+    ```
+  - 전개 연산자(spread)
+    ```
+      let todoList = [1, 2, 3];
+      let newTodoList = [...todoList, 4]; // 1,2,3,4
+    ```
