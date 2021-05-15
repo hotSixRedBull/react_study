@@ -185,3 +185,19 @@ Polyfill
 - 상태 값은 불변 변수는 아니지만, 불변변수처럼 관리하는게 좋다.
   - 상태 값이 객체인 경우, 참조하는 값이 바뀌지 않고 내부 속성만 바뀌는 경우 리액트는 상태값 변경 함수가 호출되어도 이전값과의 변경이 없다고 판단한다.
   - 따라서 전개연산자를 통해 새 객체를 만들어 주어야 한다.
+
+### return value of component function
+- 컴포넌트에서는 리액트 요소, 다른 컴포넌트, 문자, 숫자, 배열 등을 반환할 수 있다.
+- 리액트 요소의 배열을 반환할 때는 각 요소가 `key`를 가지고 있어야 한다.
+  - key는 virtual dom에서의 연산에 필요하며, 렌더링 작업을 효율적으로 하기 위한 값이다.
+- `React.Fragment`
+  -  컴포넌트 함수는 React.Fragment를 반환할 수도 있다.
+  -  Fragment 하위의 각 요소는 `key`값을 가지지 않아도 되는데, 요소의 순서가 `key`의 역할을 하기 때문이다.
+  -  입력은 `<React.Fragment>...</React.Fragment>` 혹은 값을 비워서 `<>...</>`로 표현할 수도 있다.
+- Boolean
+  - `<div>{null} {false} {true} </div>` 와 같은 값들을 반환할 수도 있다.
+  - 이러한 값들은 무시되며, 조건부 렌더링을 할 때 도움이 된다.
+    - 예제: `{count.value > 0 && <Title title={'현재 카운트: ${count.value}'}/>}`
+- React Portal
+  - `import ReactDOM from 'react-dom'`에서 ReactDOM.createPortal(`<div>...</div>`,document.getElementById(`...`));와 같은 형식으로 `...` 요소에서 렌더링이 가능하다.
+  - modal을 위해 주로 사용된다.
