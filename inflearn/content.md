@@ -174,3 +174,5 @@ Polyfill
       let todoList = [1, 2, 3];
       let newTodoList = [...todoList, 4]; // 1,2,3,4
     ```
+  - filter 추가하기
+    - .filter(_, index)로 필터링을 했는데, callback 함수는 (값, 인덱스, 원배열) 순으로 인자가 주어진다.
