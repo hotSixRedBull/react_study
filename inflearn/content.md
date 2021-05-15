@@ -148,3 +148,12 @@ Polyfill
     - SPA의 단점인 초기 페이지 로딩 속도를 높이기 위한 모듈
     - 페이지를 분할하여 필요할 때 로드한다.
 
+### Concepts in React1
+- react를 사용하지 않는 To-Do list 예제
+  - `document.querySelector(.todo .desc)`: todo class 요소 하위의 desc class를 가져온다.
+  - `document.createElement('li')`: li 요소를 만든다.
+  - `document.querySelector(.todo .desc).appendChild({다른 element})`: li type의 경우에 이렇게 child를 추가할 수 있는건가?
+  - `document.createElement('li').innerHTML`: 생성하려는 요소의 innerHTML에 접근, 수정 가능. (document.createElement('li')를 변수에 할당했다면.)
+- react를 사용하여 To-Do list 생성
+  - ``
+
