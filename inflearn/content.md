@@ -263,3 +263,24 @@ Polyfill
   - 자주하는 실수
     - 반환문 뒤에 훅을 호출하는 경우
     - `if(!user) { return; }` ... `const [num, setNum] = useState(0);`
+
+### project1: 2048
+[link](https://github.com/landvibe/inflearn-react-project)
+- auto import in vs code.
+  - `jsconfig.json`
+  ```
+  {
+    "compilerOptions": {
+      "jsx": "react",
+      "module": "commonjs",
+      "target": "es6",
+      "checkJS": true
+    },
+    "exclude": ["node_modules"]
+  }
+  ```
+- lodash 모듈
+  - 함수형 프로그래밍 작성 시 사용
+  - 함수형 프로그래밍을 하지 않더라도, 유용한 기능들이 있음
+  - `times`
+    - `import times from 'lodash/times';`
