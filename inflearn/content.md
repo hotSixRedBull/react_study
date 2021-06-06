@@ -1,6 +1,6 @@
 ## 4
 ### JSX 문법
-class 대신 calssName을 사용한다.
+class 대신 className을 사용한다.
 - className을 쓰는 이유는, class는 html 예약어이기 때문.
 CSS는 camel case로 사용한다.
 - javascript에서 하이픈('-')은 이항연산자이기 때문.
@@ -284,3 +284,15 @@ Polyfill
   - 함수형 프로그래밍을 하지 않더라도, 유용한 기능들이 있음
   - `times`
     - `import times from 'lodash/times';`
+
+# context api로 데이터 전달하기
+- 상위 -> 하위 컴포넌트로는 `속성`값을 통해서 데이터를 전달할 수 있다.
+- 하지만 데이터를 입력하는 컴포넌트와 하위 컴포넌트가 떨어져있거나, 다수인 경우에는 context를 사용하는 것이 더 유리할 수 있다.
+- 코드
+  `const alanComponent = createComponent('초기값');`: 생성
+  전달 시에는,
+  `<alanComponent.Provider></alanComponent.Provider>`
+  사용 시에는,
+  1) `<alanComponent.Consumer> {data => jsx문법 } </alanComponent.Consumer>`: render props 패턴
+  2) `const whenINeed = useContext(alanComponent);`: 사용
+
