@@ -296,3 +296,9 @@ Polyfill
   1) `<alanComponent.Consumer> {data => jsx문법 } </alanComponent.Consumer>`: render props 패턴
   2) `const whenINeed = useContext(alanComponent);`: 사용
 
+# ref 속성값으로 자식 요소에 접근하기
+- DOM 요소에 직접 접근하여 함수를 호출하고 싶은 경우 사용
+- `useRef();`: 초기화 및 생성
+- 컴포넌트에서 ref 속성을 사용하려면, `React.forwardRef(function (상태, ref) { ... })`를 이용하여 사용할 수 있다.
+  - ref가 예약어라..
+- `useCallback`
