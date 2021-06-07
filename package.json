@@ -1,0 +1,26 @@
+{
+  "name": "react_study",
+  "version": "1.0.0",
+  "description": "This project is for learning react.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotSixRedBull/react_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hotSixRedBull/react_study/issues"
+  },
+  "homepage": "https://github.com/hotSixRedBull/react_study#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "2.3.1"
+  }
+}
